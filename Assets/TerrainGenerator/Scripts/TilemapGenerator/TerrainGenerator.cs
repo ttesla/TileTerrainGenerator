@@ -16,8 +16,7 @@ namespace TileMapGenerator
         private void Start()
         {
             SetupTilePrefabDictionary();
-            SetupTileWaveMap();
-            GenerateMap();
+            GenerateMap(Width, Height);
         }
 
         //private void Update()
@@ -28,11 +27,15 @@ namespace TileMapGenerator
         //    }
         //}
 
-        public void GenerateMap()
+        public void GenerateMap(int width, int height)
         {
             Debug.Log("Generating map...");
 
+            Width = width; 
+            Height = height;
+
             //Random.InitState(1923);
+            SetupTileWaveMap();
             ClearPreviousMap();
             WaveFunctionCollapse();
             GenerateFinalMap();
@@ -53,7 +56,7 @@ namespace TileMapGenerator
 
         private void SetupTileWaveMap() 
         {
-            mWaveMap = new TileWave[Width, Height];
+            mWaveMap = new TileWave[Height, Width];
 
             for (int y = 0; y < Height; y++)
             {
@@ -169,7 +172,9 @@ namespace TileMapGenerator
             if(mTileDictionary.TryGetValue(tileType, out Tile tile)) 
             {
                 float height = GetHeight(tileType);
-                GameObject.Instantiate(tile, new Vector3(x * 2.0f, height, y * 2.0f), tile.transform.rotation, transform);
+                float xOffset = Width;
+                float yOffset = -25.0f;
+                GameObject.Instantiate(tile, new Vector3(x * 2.0f - xOffset, height, y * 2.0f - yOffset), tile.transform.rotation, transform);
             }
         }
 
