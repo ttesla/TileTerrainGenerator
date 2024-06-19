@@ -6,4 +6,4 @@ And terrain, city generation wizard Oskar Stalberg's [Wave demo](https://oskarst
 
 Then I did this little demo. 
 
-Play on [Itch.io](https://tesla.itch.io/tilemap-generator)
+Play on https://tesla.itch.io/tilemap-generator
