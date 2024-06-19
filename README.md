@@ -5,3 +5,5 @@ I did some reading about the Wave Function Collapse tilemap generation algorithm
 And terrain, city generation wizard Oskar Stalberg's [Wave demo](https://oskarstalberg.com/game/wave/wave.html) helped me to visualize the algorithm. 
 
 Then I did this little demo. 
+
+Play on [Itch.io](https://tesla.itch.io/tilemap-generator)
