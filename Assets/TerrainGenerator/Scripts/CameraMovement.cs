@@ -15,8 +15,8 @@ namespace TestUI
         private void ButtonUpdate() 
         {
             Vector3 moveInput = Vector3.zero;
-            moveInput.x = -Input.GetAxis("Horizontal");
-            moveInput.z = -Input.GetAxis("Vertical"); 
+            moveInput.x = Input.GetAxis("Horizontal");
+            moveInput.z = Input.GetAxis("Vertical"); 
 
             transform.position += moveInput * (MoveSpeed * Time.deltaTime);
 

@@ -79,24 +79,7 @@ namespace TileMapGenerator
 
         private void WaveFunctionCollapse() 
         {
-            int tryCount = 0;
-            int maxTryCount = 10000;
-            
-            while (true) 
-            {
-                if (CollapseUpdate()) 
-                {
-                    break;
-                }
-
-                if (tryCount > maxTryCount) 
-                {
-                    Debug.LogWarning("Max try count reached!");
-                    break;
-                }
-
-                tryCount++;
-            }
+            CollapseUpdate();
         }
 
         private bool CollapseUpdate() 
